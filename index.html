@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poineer-bank</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div id="login-aria">
+      <h1 class="text-center">Welcome to my Poineer Bank</h1>
+      <div class="submit_aria">
+        <h2>Login</h2>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter your Email"
+        />
+        <br />
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Enter your password"
+        />
+      </div>
+      <br />
+      <button id="login" class="btn btn-success">Enter</button>
+    </div>
+
+    <div id="teanjection_area">
+      <h1 class="text-center tranection">Transaction Area</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="Deposit status">
+              <h5>Deposit</h5>
+              <h2>$00</h2>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="withdraw status">
+              <h5>withdraw</h5>
+              <h2>$00</h2>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="Balance status">
+              <h5>Balance</h5>
+              <h2>$00</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="withdraw_Deposite">
+              <h2>Deposits</h2>
+              <br />
+              <input
+                type="text"
+                id="depositAmaount"
+                class="form-control"
+                placeholder="$ amount you want to Withdraw"
+              />
+              <br />
+              <button id="deposited" class="btn btn-success">Deposits</button>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="withdraw_Deposite">
+              <h2>Withdraw</h2>
+              <br />
+              <input
+                type="number"
+                name=""
+                id="number"
+                class="form-control"
+                placeholder="$ amount you want to Deposits"
+              />
+              <br />
+              <button id="Withdrawed" class="btn btn-success">Withdraw</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // login event handler
+      const longBtn = document.getElementById("login");
+      longBtn.addEventListener("click", function () {
+        const loginArea = document.getElementById("login-aria");
+        loginArea.style.display = "none";
+        const tranectionArea = document.getElementById("teanjection_area");
+        tranectionArea.style.display = "block";
+      });
+
+      // Deposite Eeven handelar
+      const depositedAdded = document.getElementById("deposited");
+      depositedAdded.addEventListener("click", function () {
+        const depositeAmount = document.getElementById("depositAmaount").value;
+        const depositeNumber = parseFloat(depositeAmount);
+      });
+
+      // Withdraw Even handellar
+      const WithdrawdMainess = document.getElementById("Withdrawed");
+      WithdrawdMainess.addEventListener("click", function () {
+        console.log("hello I am Withdarw Now");
+      });
+    </script>
+  </body>
+</html>

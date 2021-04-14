@@ -1,0 +1,37 @@
+body {
+  padding: 100px;
+}
+.submit_aria {
+  margin-top: 40px;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px gray;
+}
+#teanjection_area {
+  display: none;
+  padding: 10px;
+}
+.tranection {
+  margin-bottom: 60px;
+}
+.status {
+  margin: 0 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+.Deposit {
+  background-color: slateblue;
+}
+.withdraw {
+  background-color: lightsalmon;
+}
+.Balance {
+  background-color: orange;
+}
+.withdraw_Deposite {
+  margin-top: 40px;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px gray;
+  display: block;
+}
