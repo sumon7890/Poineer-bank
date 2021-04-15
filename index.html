@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="/style.css" />
   </head>
+
   <body>
     <div id="login-aria">
       <h1 class="text-center">Welcome to my Poineer Bank</h1>
@@ -89,7 +90,12 @@
         </div>
       </div>
     </div>
-
+    <h1 id="fotter">
+      Developing By<a
+        href="https://www.facebook.com/profile.php?id=100010355470406"
+        >Sumon_Khan</a
+      >
+    </h1>
     <script>
       // login event handler
       const longBtn = document.getElementById("login");
@@ -136,6 +142,15 @@
         const floatNumber = parseFloat(amaount);
         return floatNumber;
       }
+      // fotter
+
+      const fotter = document.getElementById("fotter");
+      fotter.style.color = "orange";
+      fotter.style.backgroundColor = "darkolivegreen";
+      fotter.style.borderRadius = "10px";
+      fotter.style.padding = "15px";
+      fotter.style.marginTop = "100px";
+      //
     </script>
   </body>
 </html>
