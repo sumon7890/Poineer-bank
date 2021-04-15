@@ -120,7 +120,7 @@
       WithdrawdMainess.addEventListener("click", function () {
         const WithdrawNumber = parseFloatNumber("Withdraw");
         upDateSpanTotal("currentWithdraw", WithdrawNumber);
-        upDateBalanceTotal("currentBalance", WithdrawNumber);
+        upDateSpanTotal("currentBalance", -1 * WithdrawNumber);
         document.getElementById("Withdraw").value = "";
       });
       // Balance Handller
@@ -130,20 +130,21 @@
         const currentNumber = parseFloat(current);
         const totalBalance = number + currentNumber;
         document.getElementById(id).innerText = totalBalance;
-      }
+      } /*
+
+      upDateBalanceTotal("currentBalance", WithdrawNumber);
+      no need..... if we need use the function
       function upDateBalanceTotal(id, number) {
         const current = document.getElementById(id).innerText;
         const currentNumber = parseFloat(current);
         const totalBalance = currentNumber - number;
         document.getElementById(id).innerText = totalBalance;
-      }
+      }*/
       function parseFloatNumber(num) {
         const amaount = document.getElementById(num).value;
         const floatNumber = parseFloat(amaount);
         return floatNumber;
       }
-      // fotter
-
       const fotter = document.getElementById("fotter");
       fotter.style.color = "orange";
       fotter.style.backgroundColor = "darkolivegreen";
