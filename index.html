@@ -41,19 +41,19 @@
           <div class="col-md-4">
             <div class="Deposit status">
               <h5>Deposit</h5>
-              <h2>$00</h2>
+              <h2>$ <span id="currentDeposite">00</span></h2>
             </div>
           </div>
           <div class="col-md-4">
             <div class="withdraw status">
               <h5>withdraw</h5>
-              <h2>$00</h2>
+              <h2>$ <span id="currentWithdraw">00</span></h2>
             </div>
           </div>
           <div class="col-md-4">
             <div class="Balance status">
               <h5>Balance</h5>
-              <h2>$00</h2>
+              <h2>$ <span id="currentBalance">1240</span></h2>
             </div>
           </div>
         </div>
@@ -66,7 +66,7 @@
                 type="text"
                 id="depositAmaount"
                 class="form-control"
-                placeholder="$ amount you want to Withdraw"
+                placeholder="$ amount you want to Deposits"
               />
               <br />
               <button id="deposited" class="btn btn-success">Deposits</button>
@@ -77,11 +77,10 @@
               <h2>Withdraw</h2>
               <br />
               <input
-                type="number"
-                name=""
-                id="number"
+                type="text"
+                id="Withdraw"
                 class="form-control"
-                placeholder="$ amount you want to Deposits"
+                placeholder="$ amount you want to Withdraw"
               />
               <br />
               <button id="Withdrawed" class="btn btn-success">Withdraw</button>
@@ -97,22 +96,46 @@
       longBtn.addEventListener("click", function () {
         const loginArea = document.getElementById("login-aria");
         loginArea.style.display = "none";
-        const tranectionArea = document.getElementById("teanjection_area");
-        tranectionArea.style.display = "block";
+        const teanjection_area = document.getElementById("teanjection_area");
+        teanjection_area.style.display = "block";
       });
 
       // Deposite Eeven handelar
       const depositedAdded = document.getElementById("deposited");
       depositedAdded.addEventListener("click", function () {
-        const depositeAmount = document.getElementById("depositAmaount").value;
-        const depositeNumber = parseFloat(depositeAmount);
+        const depositAmaount = parseFloatNumber("depositAmaount");
+        upDateSpanTotal("currentDeposite", depositAmaount);
+        upDateSpanTotal("currentBalance", depositAmaount);
+        document.getElementById("depositAmaount").value = "";
       });
 
       // Withdraw Even handellar
       const WithdrawdMainess = document.getElementById("Withdrawed");
       WithdrawdMainess.addEventListener("click", function () {
-        console.log("hello I am Withdarw Now");
+        const WithdrawNumber = parseFloatNumber("Withdraw");
+        upDateSpanTotal("currentWithdraw", WithdrawNumber);
+        upDateBalanceTotal("currentBalance", WithdrawNumber);
+        document.getElementById("Withdraw").value = "";
       });
+      // Balance Handller
+
+      function upDateSpanTotal(id, number) {
+        const current = document.getElementById(id).innerText;
+        const currentNumber = parseFloat(current);
+        const totalBalance = number + currentNumber;
+        document.getElementById(id).innerText = totalBalance;
+      }
+      function upDateBalanceTotal(id, number) {
+        const current = document.getElementById(id).innerText;
+        const currentNumber = parseFloat(current);
+        const totalBalance = currentNumber - number;
+        document.getElementById(id).innerText = totalBalance;
+      }
+      function parseFloatNumber(num) {
+        const amaount = document.getElementById(num).value;
+        const floatNumber = parseFloat(amaount);
+        return floatNumber;
+      }
     </script>
   </body>
 </html>
