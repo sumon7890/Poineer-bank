@@ -14,6 +14,7 @@ const longBtn = document.getElementById("login");
         upDateSpanTotal("currentBalance", depositAmaount);
         document.getElementById("depositAmaount").value = "";
       });
+      //
 
       // Withdraw Even handellar
       const WithdrawdMainess = document.getElementById("Withdrawed");
