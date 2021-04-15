@@ -41,7 +41,7 @@ const longBtn = document.getElementById("login");
         teanjection_area.style.display = "block";
       });
 
-      // Deposite Eeven handelar
+      // Deposite Eevent handelar
       const depositedAdded = document.getElementById("deposited");
       depositedAdded.addEventListener("click", function () {
         const depositAmaount = parseFloatNumber("depositAmaount");
